@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import books from "../data/fantasy.json";
 import { Component } from "react";
+import "../Books.css";
 
 class AllTheBooks extends Component {
   // state = {
@@ -13,14 +14,14 @@ class AllTheBooks extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row className="row-gap-4">
+      <Container fluid className="cont">
+        <Row className="row-gap-4 py-2">
           {books.map((book) => {
             return (
-              <Col key={book.asin}>
-                <Card style={{ width: "18rem", height: "80vh" }}>
-                  <Card.Img variant="top" src={book.img} style={{ height: "60%" }} />
-                  <Card.Body className="d-flex flex-column">
+              <Col xs={12} sm={6} md={4} lg={3} xxl={2} key={book.asin}>
+                <Card>
+                  <Card.Img variant="top" src={book.img} className="image" />
+                  <Card.Body className="d-flex flex-column card-bod">
                     <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {book.title}
                     </Card.Title>
@@ -28,7 +29,7 @@ class AllTheBooks extends Component {
                     <Card.Text className="mt-auto mb-0">Price: {book.price}$ </Card.Text>
 
                     <Button variant="primary" className="mt-1">
-                      Go somewhere
+                      Aggiungi al carrello
                     </Button>
                   </Card.Body>
                 </Card>
