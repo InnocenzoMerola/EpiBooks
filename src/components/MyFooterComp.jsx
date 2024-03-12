@@ -18,6 +18,7 @@ const MyFooterComp = function () {
           </footer>
         </Col>
       </Row>
+      <hr />
       <Row>
         <Col>
           <p className="text-center">Publish &copy; 2024 Merola Innocenzo</p>
