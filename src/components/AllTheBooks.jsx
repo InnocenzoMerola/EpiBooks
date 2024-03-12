@@ -17,7 +17,7 @@ class AllTheBooks extends Component {
         <Row className="row-gap-4">
           {books.map((book) => {
             return (
-              <Col>
+              <Col key={book.asin}>
                 <Card style={{ width: "18rem", height: "95vh" }}>
                   <Card.Img variant="top" src={book.img} style={{ height: "60%" }} />
                   <Card.Body className="d-flex flex-column">
