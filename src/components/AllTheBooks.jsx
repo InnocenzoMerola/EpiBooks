@@ -18,10 +18,12 @@ class AllTheBooks extends Component {
           {books.map((book) => {
             return (
               <Col key={book.asin}>
-                <Card style={{ width: "18rem", height: "95vh" }}>
+                <Card style={{ width: "18rem", height: "80vh" }}>
                   <Card.Img variant="top" src={book.img} style={{ height: "60%" }} />
                   <Card.Body className="d-flex flex-column">
-                    <Card.Title>{book.title}</Card.Title>
+                    <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {book.title}
+                    </Card.Title>
                     <Card.Text>Genere: {book.category}</Card.Text>
                     <Card.Text className="mt-auto mb-0">Price: {book.price}$ </Card.Text>
 
