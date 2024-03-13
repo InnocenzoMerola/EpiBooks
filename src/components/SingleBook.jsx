@@ -1,12 +1,13 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Component } from "react";
 import "../Books.css";
 
 class SingleBook extends Component {
   state = {
-    selected: null,
+    selected: false,
   };
 
   clickOnBook = (e) => {
@@ -18,14 +19,7 @@ class SingleBook extends Component {
   render() {
     return (
       <Col xs={12} sm={6} md={4} lg={3} xxl={2}>
-        <Card
-          onClick={this.clickOnBook}
-          style={{
-            border: this.state.selected ? "1px solid green" : "none",
-            cursor: "pointer",
-            backgroundColor: this.state.selected ? "#00ff272e" : "White",
-          }}
-        >
+        <Card className={this.state.selected ? "card-sel" : "card-point"} onClick={this.clickOnBook}>
           <Card.Img variant="top" src={this.props.book.img} className="image" />
           <Card.Body className="d-flex flex-column card-bod">
             <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>

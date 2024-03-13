@@ -16,3 +16,17 @@
   object-fit: contain;
   padding-bottom: 0.2rem;
 }
+
+.card-sel {
+  border: 1px solid green;
+  background-color: #00ff272e;
+  cursor: pointer;
+}
+
+.card-point {
+  cursor: pointer;
+}
+
+.inp-w {
+  width: 30%;
+}
