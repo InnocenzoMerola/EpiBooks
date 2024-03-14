@@ -30,12 +30,12 @@ class SingleBook extends Component {
             <Card.Text className="mt-auto mb-0">Price: {this.props.book.price}$ </Card.Text>
 
             <Button variant="primary" className="mt-1">
-              Aggiungi al carrello
+              Aggiungi una recensione
             </Button>
           </Card.Body>
         </Card>
 
-        {this.state.selected === true && <CommentArea book={this.props.book} />}
+        {this.state.selected === true && <CommentArea id={this.props.book.asin} />}
       </Col>
     );
   }

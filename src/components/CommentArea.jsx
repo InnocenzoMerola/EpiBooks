@@ -11,8 +11,8 @@ class CommentArea extends Component {
     comments: [],
   };
 
-  fetchComment = (idOfBook) => {
-    fetch(MY_URL + `?book=${idOfBook}`, {
+  fetchComment = () => {
+    fetch(MY_URL + this.props.id, {
       headers: {
         authorization: MY_KEY,
       },
@@ -35,16 +35,14 @@ class CommentArea extends Component {
   };
 
   componentDidMount() {
-    this.fetchComment(this.props.asin);
+    this.fetchComment();
   }
 
   render() {
-    const { comments } = this.state;
-    const { book } = this.props;
     return (
       <div>
-        <CommentList commArr={comments} />
-        {/* {book && <AddComment />} */}
+        <CommentList commArr={this.state.comments} />
+        <AddComment id={this.props.id} />
       </div>
     );
   }
