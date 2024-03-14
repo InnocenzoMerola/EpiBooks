@@ -1,12 +1,6 @@
 import { Component } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 import SingleBook from "./SingleBook";
-import fantasy from "../data/fantasy.json";
-import history from "../data/history.json";
-import horror from "../data/horror.json";
-import romance from "../data/romance.json";
-import scifi from "../data/scifi.json";
 
 class BookList extends Component {
   state = {
@@ -19,9 +13,9 @@ class BookList extends Component {
 
   render() {
     const { title } = this.state;
-    const allBooks = [...fantasy];
-    // const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
-    const searchedBook = allBooks.filter((book) => book.title.toLowerCase().includes(title.toLowerCase()));
+    const allBooks = this.props.libraryArr;
+
+    const searchedBook = allBooks.filter((book) => book.title.toLowerCase().includes(this.state.title));
 
     return (
       <>
@@ -30,10 +24,11 @@ class BookList extends Component {
         </div>
 
         {searchedBook.length === 0 ? (
-          <p>Spiacenti non abbiamo questo libro </p>
+          <p>Spiacenti questo libro non è disponibile</p>
         ) : (
           searchedBook.map((b) => <SingleBook key={b.asin} book={b} />)
         )}
+
         {/* {this.props.libraryArr.map((b) => {
           <SingleBook book={b} />;
         })} */}
