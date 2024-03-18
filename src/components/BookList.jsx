@@ -48,7 +48,6 @@ class BookList extends Component {
             </Row>
           </Col>
           <Col sm={3}>
-            {/* <CommentArea id={this.props.libraryArr.asin} /> */}
             <CommentArea selectedAsin={selectedAsin} />
           </Col>
         </Row>

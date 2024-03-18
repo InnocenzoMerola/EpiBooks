@@ -43,6 +43,17 @@ class AddComment extends Component {
     }
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.id !== this.props.id) {
+      this.setState({
+        comment: {
+          ...this.state.comment,
+          elementId: this.props.id,
+        },
+      });
+    }
+  }
+
   render() {
     return (
       <div>
