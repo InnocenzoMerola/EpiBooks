@@ -7,21 +7,18 @@ import { Component } from "react";
 import "../Books.css";
 
 class SingleBook extends Component {
-  state = {
-    selected: false,
-  };
-
   clickOnBook = (e) => {
     e.preventDefault();
-    this.setState((st) => ({
-      selected: !st.selected,
-    }));
+
     this.props.selBook(this.props.book.asin);
   };
   render() {
     return (
       <Col xs={12} sm={6} md={4} lg={3} xxl={3}>
-        <Card className={this.state.selected ? "card-sel" : "card-point"} onClick={this.clickOnBook}>
+        <Card
+          className={this.props.book.asin === this.props.currentAsin ? "card-sel" : "card-point"}
+          onClick={this.clickOnBook}
+        >
           <Card.Img variant="top" src={this.props.book.img} className="image" />
           <Card.Body className="d-flex flex-column card-bod">
             <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>

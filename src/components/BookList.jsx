@@ -31,7 +31,7 @@ class BookList extends Component {
           <div className="text-center">
             <input type="text" placeholder="Cerca" value={title} onChange={this.searchClick} className="inp-w" />
           </div>
-          <Col sm={9}>
+          <Col xs={6} sm={9}>
             <Row className="row-gap-4">
               {searchedBook.length === 0 ? (
                 <p>Spiacenti questo libro non è disponibile</p>
@@ -42,12 +42,13 @@ class BookList extends Component {
                     book={book}
                     selBook={this.selBook}
                     sel={selectedAsin && selectedAsin.asin === book.asin}
+                    currentAsin={this.state.selectedAsin}
                   />
                 ))
               )}
             </Row>
           </Col>
-          <Col sm={3}>
+          <Col xs={6} sm={3}>
             <CommentArea selectedAsin={selectedAsin} />
           </Col>
         </Row>
