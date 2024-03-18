@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import CommentArea from "./CommentArea";
+// import CommentArea from "./CommentArea";
 
 import Col from "react-bootstrap/Col";
 import { Component } from "react";
@@ -16,10 +16,11 @@ class SingleBook extends Component {
     this.setState((st) => ({
       selected: !st.selected,
     }));
+    this.props.selBook(this.props.book.asin);
   };
   render() {
     return (
-      <Col xs={12} sm={6} md={4} lg={3} xxl={2}>
+      <Col xs={12} sm={6} md={4} lg={3} xxl={3}>
         <Card className={this.state.selected ? "card-sel" : "card-point"} onClick={this.clickOnBook}>
           <Card.Img variant="top" src={this.props.book.img} className="image" />
           <Card.Body className="d-flex flex-column card-bod">
@@ -35,7 +36,7 @@ class SingleBook extends Component {
           </Card.Body>
         </Card>
 
-        {this.state.selected === true && <CommentArea id={this.props.book.asin} />}
+        {/* {this.state.selected === true && <CommentArea id={this.props.book.asin} />} */}
       </Col>
     );
   }

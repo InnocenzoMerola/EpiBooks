@@ -3,7 +3,7 @@ import CommentList from "./CommentList";
 import AddComment from "./AddComment";
 
 const MY_KEY =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOTc1MTRjNTllYzAwMTk5MGQ2ZTUiLCJpYXQiOjE3MDkyODMxNTMsImV4cCI6MTcxMDQ5Mjc1M30.Ayse55yV_8pG9LTXjxoXC7o-zrrF63ac6KuLddTNDnU";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOTc1MTRjNTllYzAwMTk5MGQ2ZTUiLCJpYXQiOjE3MTA3NjU3MTYsImV4cCI6MTcxMTk3NTMxNn0.k4up4vz2nTcjQ16Lc7mvbDhDBn3Qt-9HLiiCb8lx1ko";
 const MY_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 
 class CommentArea extends Component {
@@ -12,7 +12,7 @@ class CommentArea extends Component {
   };
 
   fetchComment = () => {
-    fetch(MY_URL + this.props.id, {
+    fetch(MY_URL + this.props.selectedAsin, {
       headers: {
         authorization: MY_KEY,
       },
@@ -35,14 +35,22 @@ class CommentArea extends Component {
   };
 
   componentDidMount() {
-    this.fetchComment();
+    if (this.props.selectedAsin) {
+      this.fetchComment();
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.selectedAsin !== this.props.selectedAsin) {
+      this.fetchComment();
+    }
   }
 
   render() {
     return (
       <div>
         <CommentList commArr={this.state.comments} />
-        <AddComment id={this.props.id} />
+        <AddComment id={this.props.selectedAsin} />
       </div>
     );
   }

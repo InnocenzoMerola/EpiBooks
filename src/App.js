@@ -1,7 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 
 import MyNavComp from "./components/MyNavComp";
 import WelcomeComp from "./components/WelcomeComp";
@@ -27,10 +26,8 @@ function App() {
       <WelcomeComp />
 
       <Container fluid className="cont">
-        <Row className="row-gap-4 py-2">
-          {/* <SingleBook book={fantasy[0]} /> */}
-          <BookList libraryArr={fantasy} />
-        </Row>
+        {/* <SingleBook book={fantasy[0]} /> */}
+        <BookList libraryArr={fantasy} />
       </Container>
       {/* <AllTheBooks /> */}
       <MyFooterComp />
