@@ -27,7 +27,7 @@ const SingleComment = ({ comment }) => {
   return (
     <>
       {comment.comment}, rate: {comment.rate}
-      <Button variant="danger" className="ms-2" onClick={() => deleteComment(comment._id)}>
+      <Button variant="danger" className="mx-auto my-btn" size="sm" onClick={() => deleteComment(comment._id)}>
         Elimina
       </Button>
     </>

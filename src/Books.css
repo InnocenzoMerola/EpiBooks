@@ -11,10 +11,16 @@
   border-top: 1px solid #7d7d7d;
 }
 
-.image {
+.img-div-h {
   height: 17rem;
-  object-fit: contain;
-  padding-bottom: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 90%;
+  width: 80%;
 }
 
 .card-sel {
@@ -33,4 +39,8 @@
 
 .big-div {
   background-color: palegoldenrod;
+}
+
+.my-btn {
+  width: 6rem;
 }

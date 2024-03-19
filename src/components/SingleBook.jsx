@@ -16,7 +16,9 @@ const SingleBook = function (props) {
   return (
     <Col xs={12} sm={6} md={4} lg={3} xxl={3}>
       <Card className={props.book.asin === props.currentAsin ? "card-sel" : "card-point"} onClick={clickOnBook}>
-        <Card.Img variant="top" src={props.book.img} className="image" />
+        <div className="img-div-h">
+          <Card.Img variant="top" src={props.book.img} className="image" />
+        </div>
         <Card.Body className="d-flex flex-column card-bod">
           <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
             {props.book.title}
