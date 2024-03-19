@@ -40,21 +40,12 @@ const AddComment = function (props) {
     }
   };
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.id !== this.props.id) {
-  //     this.setState({
-  //       comment: {
-  //         ...this.state.comment,
-  //         elementId: this.props.id,
-  //       },
-  //     });
-  //   }
-  // }
   useEffect(() => {
     setComment({
       ...comment,
       elementId: props.id,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.id]);
 
   return (

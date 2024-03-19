@@ -34,6 +34,7 @@ const CommentArea = function ({ selectedAsin }) {
     if (selectedAsin) {
       fetchComment();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAsin]);
 
   return (
