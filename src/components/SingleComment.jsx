@@ -1,3 +1,4 @@
+import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 
 const MY_KEY =
@@ -25,12 +26,12 @@ const SingleComment = ({ comment }) => {
   };
 
   return (
-    <>
+    <ListGroup.Item data-testid="single-comment" className="d-flex flex-column">
       {comment.comment}, rate: {comment.rate}
       <Button variant="danger" className="mx-auto my-btn" size="sm" onClick={() => deleteComment(comment._id)}>
         Elimina
       </Button>
-    </>
+    </ListGroup.Item>
   );
 };
 

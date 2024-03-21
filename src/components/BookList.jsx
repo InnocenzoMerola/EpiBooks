@@ -10,7 +10,7 @@ const BookList = function (props) {
   const [selectedAsin, setSelectedAsin] = useState(null);
 
   const searchClick = (e) => {
-    setTitle(e.target.value);
+    setTitle(e.target.value.toLowerCase());
   };
 
   const selBook = (asin) => {
