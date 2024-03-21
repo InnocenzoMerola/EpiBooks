@@ -14,7 +14,7 @@ const SingleBook = function (props) {
   };
 
   return (
-    <Col xs={12} sm={6} md={4} lg={3} xxl={3}>
+    <Col xs={12} sm={6} md={4} lg={3} xxl={3} data-testid="libri">
       <Card className={props.book.asin === props.currentAsin ? "card-sel" : "card-point"} onClick={clickOnBook}>
         <div className="img-div-h">
           <Card.Img variant="top" src={props.book.img} className="image" />

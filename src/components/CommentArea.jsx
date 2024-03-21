@@ -38,9 +38,9 @@ const CommentArea = function ({ selectedAsin }) {
   }, [selectedAsin]);
 
   return (
-    <div>
+    <div data-testid="list-comment">
       <CommentList commArr={comments} />
-      <AddComment id={selectedAsin} />
+      <AddComment id={selectedAsin} data-testid="addComment" />
     </div>
   );
 };

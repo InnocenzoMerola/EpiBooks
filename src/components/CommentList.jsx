@@ -7,7 +7,7 @@ const CommentList = function (props) {
       <ListGroup>
         {props.commArr.map((comment) => {
           return (
-            <ListGroup.Item key={comment._id} className="d-flex flex-column">
+            <ListGroup.Item key={comment._id} className="d-flex flex-column" data-testid="comment-list-comment">
               <SingleComment comment={comment} />
             </ListGroup.Item>
           );
